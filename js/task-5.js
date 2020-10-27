@@ -4,12 +4,11 @@ const inputRef = document.querySelector('.task5__input');
 const buttonRef = document.querySelector('.task5__button');
 
 buttonRef.addEventListener('click', function () {
-  console.log(inputRef.value);
-  console.log(country = inputRef.value);
-  console.log(country = country.toLowerCase());
-});
+  inputRef.value;
+  country = inputRef.value;
+  country = country.toLowerCase();
 
-switch (country) {
+  switch (country) {
   case 'китай':
     cost = 100;
     console.log(`Доставка в ${country} будет стоить ${cost} кредитов`);
@@ -38,3 +37,6 @@ switch (country) {
   default:
     alert('В вашей стране доставка не доступна');
 }
+});
+
+
