@@ -16,27 +16,18 @@ buttonEnterRel.addEventListener('click', function () {
     const totalPrice = pricePerDroid * quantity;
     inputRef.value = '';
 
-    // if (totalPrice > credits) {
-    //     console.log('Недостаточно средств на счету!');
-
-    // } else {
-    //     credits -= totalPrice;
-    //     console.log(`Вы купили ${quantity} дроидов, на счету осталось ${credits}  кредитов.`);
-
-    // }
-
     if (totalPrice > credits) {
-      console.log('Недостаточно средств на счету!');
+      return alert('Недостаточно средств на счету!');
     }
 
     if (totalPrice <= credits) {
       credits -= totalPrice;
-      console.log(
+      return alert(
         `Вы купили ${quantity} дроидов, на счету осталось ${credits}  кредитов.`,
       );
     }
   }
   if (quantity <= 0) {
-    console.log('Минимальная сумма заказа: 1');
+    return alert('Минимальная сумма заказа: 1');
   }
 });
