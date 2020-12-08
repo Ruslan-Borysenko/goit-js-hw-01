@@ -3,18 +3,22 @@ let total = 0;
 let number;
 
 while (true) {
-    userInput = prompt('Введите чило');
+  userInput = prompt('Введите чило');
 
-    number = Number(userInput);
-    
-    if (Number.isNaN(number) === false) {
-        total += number;
-    }
+  number = Number(userInput);
 
-    if (userInput === null) {
-        console.log('Отменено пользователем');
-        console.log(total);
-        alert(total);
-        break;
-    }
+  //   if (Number.isNaN(number) === false) {
+  //     total += number;
+  //   }
+
+  if (!Number.isNaN(number)) {
+    total += number;
+  }
+
+  if (userInput === null) {
+    console.log('Отменено пользователем');
+    console.log(total);
+    alert(total);
+    break;
+  }
 }
