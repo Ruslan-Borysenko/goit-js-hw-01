@@ -3,7 +3,7 @@ let country;
 const inputRef = document.querySelector('.task5__input');
 const buttonRef = document.querySelector('.task5__button');
 
-buttonRef.addEventListener('click', function () {
+buttonRef.addEventListener('click', () => {
   inputRef.value;
   country = inputRef.value;
   country = country.toLowerCase();
