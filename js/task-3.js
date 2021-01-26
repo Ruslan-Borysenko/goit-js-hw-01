@@ -9,15 +9,12 @@ buttonExitRef.addEventListener('click', () => {
 
 buttonEnterRef.addEventListener('click', () => {
   const ADMIN_PASSWORD = 'jqueryismyjam';
-  let password = inputRef.value;
-  let message;
+  const password = inputRef.value;
 
   if (password === ADMIN_PASSWORD) {
-    message = 'Добро пожаловать!';
+    console.log('Добро пожаловать!');
     inputRef.value = '';
-  } else {
-    message = 'Доступ запрещен, неверный пароль!';
+    return;
   }
-
-  console.log(message);
+  console.log('Доступ запрещен, неверный пароль!');
 });

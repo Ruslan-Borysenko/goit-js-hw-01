@@ -11,23 +11,22 @@ buttonEnterRel.addEventListener('click', () => {
   let credits = 23580;
   const pricePerDroid = 3000;
   const quantity = Number(inputRef.value);
+  inputRef.value = '';
+  const totalPrice = pricePerDroid * quantity;
 
-  if (quantity > 0) {
-    const totalPrice = pricePerDroid * quantity;
-    inputRef.value = '';
-
-    if (totalPrice > credits) {
-      return alert('Недостаточно средств на счету!');
-    }
-
-    if (totalPrice <= credits) {
-      credits -= totalPrice;
-      return alert(
-        `Вы купили ${quantity} дроидов, на счету осталось ${credits}  кредитов.`,
-      );
-    }
-  }
   if (quantity <= 0) {
-    return alert('Минимальная сумма заказа: 1');
+    alert('Минимальная сумма заказа: 1');
+    return;
+  }
+  if (totalPrice > credits) {
+    alert('Недостаточно средств на счету!');
+    return;
+  }
+  if (totalPrice <= credits) {
+    credits -= totalPrice;
+    alert(
+      `Вы купили ${quantity} дроидов, на счету осталось ${credits}  кредитов.`,
+    );
+    return;
   }
 });

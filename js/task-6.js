@@ -1,24 +1,14 @@
-let userInput;
 let total = 0;
-let number;
 
 while (true) {
-  userInput = prompt('Введите чило');
-
-  number = Number(userInput);
-
-  //   if (Number.isNaN(number) === false) {
-  //     total += number;
-  //   }
-
+  // const userInput = prompt('Введите чило');
+  // const number = Number(userInput);
+  const number = Number(prompt('Введите чило'));
+  if (!number) {
+    alert('Отменено пользователем. Total=' + total);
+    break;
+  }
   if (!Number.isNaN(number)) {
     total += number;
-  }
-
-  if (userInput === null) {
-    console.log('Отменено пользователем');
-    console.log(total);
-    alert(total);
-    break;
   }
 }
